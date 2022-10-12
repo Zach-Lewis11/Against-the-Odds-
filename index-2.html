@@ -5,45 +5,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Link to Bulma-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@300&family=Puritan&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style.css">
         <title>Against the Odds!</title>
     </head>
     <!--Beginning of the body-->
     <body>
         <!--Navbar-->
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <h3 class="title is-3">Against the Odds!</h3>
+        <nav class="navbar p-6  is-align-content-baseline level">
+            <div class="level-left is-flex-direction-column">
+                <h3 class="title is-1">Against the Odds!</h3>
+                <p class="title is-5">A site for all your favorite teams odds.</p>
                 <!--Added button to go back to search/index-1.html-->
-                <a href="./index-1.html" class="button">Search Page</a>
             </div>
-            <div class="navbar-end">
-                <a href="./index-3.html" class="button">Favorites</a>
+            <div class="level-right">
+                <a href="./index-1.html" class="button m-1">Search Page</a>
+                <a href="./index-3.html" class="button m-1" >Favorites</a>
             </div>
         </nav>
         <!--Card section to display odds API information-->
-        <section class="card">
+        <main  >
+        <section class="card m-4">
             <div class="card-content">
               <div class="content">
-                Display Information from Odds API
+                <h4 id="info">Card title</h4>
+                <p>Display Information from Odds API</p>
               </div>
             </div>
         </section>
         <!--Card section to display weather API information-->
-        <section class="card">
+        <section class="card m-4">
             <div class="card-content">
               <div class="content">
-                Display Information from Weather API
+                <h4 id="weather">Weather</h4>
+                <p> Information from Weather API </p>
               </div>
             </div>
         </section>
+        </main>
         <!--Footer in the navbar style-->
-        <footer class="navbar">
-            <div class="navbar-brand">
-                <h4 class="title is-4">Contact Us & Info</h4>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
             </div>
-            <div class="navbar-end">
-                <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button">GitHub</a>
-                <a href="./README.md" class="button">README</a>
+            <div class="content has-text-centered">
+                <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
+                <a href="./README.md" class="button m-2 ">README</a>
             </div>
         </footer>
         

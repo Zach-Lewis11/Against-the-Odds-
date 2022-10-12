@@ -1,0 +1,64 @@
+:root{
+    --crimson: #DC143C;
+    --sea-green: #14DCB4;
+    --dark: #343434;
+    --light: #C0C0C0;
+
+}
+
+body{
+    background-color: var(--light);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--light);
+  }
+
+.navbar{
+    background-color: var(--dark);
+
+}
+.footer{
+    background-color: var(--dark);
+}
+
+.button{
+    background-color: var(--light);
+    font-family: 'Puritan';
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover{
+    background-color: #DC143C;
+    border-color: #DC143C;
+    box-shadow: 0 0 15px  #DC143C;
+}
+
+.title {
+    color: var(--sea-green);
+
+}
+
+#foot-title{
+    color: var(--crimson);
+}
+.hero {
+    background-image: url(./peter-f-HJpISHFSkJo-unsplash.jpg);
+}
+/* Has the stylized font For Main title and footer */
+h1, h2, h3{
+    font-family: 'Audiowide';
+}
+/* font for smaller titles i.e. card titles and whatnot */
+h4, h5, h6{
+    font-family: 'Puritan' ;
+}
+/* main text of the cards */
+p{
+    font-family: 'Nunito Sans';
+}
