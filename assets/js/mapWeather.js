@@ -109,18 +109,18 @@ function getWeather(lat,lon) {
             return response.json();
         })
         .then(function (dat) {
-            // console.log(dat);
-            // console.log(dat.data[0].wind_spd);
-            // console.log(dat.data[0].precip);
-            // console.log(dat.data[0].clouds);
-            // console.log(dat.data[0].snow);
-            // console.log(dat.data[0].uv);
-            // console.log(dat.data[0].temp);
-            // //relative humidity
-            // console.log(dat.data[0].rh);
-            // console.log(dat.data[0].weather.icon);
-            // console.log(dat.data[0].weather.description);
-            //call function here to render html to display data
+            console.log(dat);
+            console.log(dat.data[0].wind_spd);
+            console.log(dat.data[0].precip);
+            console.log(dat.data[0].clouds);
+            console.log(dat.data[0].snow);
+            console.log(dat.data[0].uv);
+            console.log(dat.data[0].temp);
+            //relative humidity
+            console.log(dat.data[0].rh);
+            console.log(dat.data[0].weather.icon);
+            console.log(dat.data[0].weather.description);
+            // call function here to render html to display data
         });
 
 }
@@ -142,19 +142,21 @@ function getGameForcast(lat,lon){
                 //create an object from data
             //print object to local storage if user denotes as a favorite
 
-            console.log(dat);
-            console.log(dat.data[0].datetime);
-            console.log(dat.data[0].wind_spd);
-            console.log(dat.data[0].precip);
-            console.log(dat.data[0].clouds);
-            console.log(dat.data[0].snow);
-            console.log(dat.data[0].uv);
-            console.log(dat.data[0].temp);
-            //relative humidity
-            console.log(dat.data[0].rh);
-            console.log(dat.data[0].weather.icon);
-            console.log(dat.data[0].weather.description);
-            //call function here to render html to display data
+
+
+            // console.log(dat);
+            // console.log(dat.data[0].datetime);
+            // console.log(dat.data[0].wind_spd);
+            // console.log(dat.data[0].precip);
+            // console.log(dat.data[0].clouds);
+            // console.log(dat.data[0].snow);
+            // console.log(dat.data[0].uv);
+            // console.log(dat.data[0].temp);
+            // //relative humidity
+            // console.log(dat.data[0].rh);
+            // console.log(dat.data[0].weather.icon);
+            // console.log(dat.data[0].weather.description);
+            // //call function here to render html to display data
         });
 }
 
