@@ -11,36 +11,42 @@ const options = {
 };
 
 var sport = document.querySelector('#sport-text');
-var team = document.querySelector('#team')
+var input = document.querySelector('#team')
 //Fetches all sports
 
 function getOdds(event) {
     event.preventDefault();
+    console.log(sport.value);
     var oddsUrl ='https://odds.p.rapidapi.com/v4/sports/'+sport.value+'/odds?markets=h2h,spreads,totals&regions=us&bookmakers=fanduel';
-    
+    var team = input.value;
     fetch(oddsUrl, options) 
         .then(function (response){
-            console.log(response)
-            if (response.ok){
+            // console.log(response)
+            // if (response.ok){
         
             return response.json();
-        }})
+        // }
+    })
     .then(function (data) {
-        console.log(data);
-        console.log(typeof team !== 'undefined');
+        // console.log(data);
+        // console.log(team);
+        // console.log(typeof team !== 'undefined');
         if (typeof team !== 'undefined'){
-            // console.log(data[0].bookmakers[0].markets[0]);
             for (var i = 0; i < data.length; i++) {
-                console.log(data[i].bookmakers[0].markets[0]);
-                // console.log(team === (data[i].home_team || data[i].away_team));
-            // if (team === (data[i].home_team || data[i].away_team)){
-            //     console.log (document.location.data[i].key);
-            //     console.log(document.location.data[i].outcomes);
+                console.log(team == (data[i].home_team || data[i].away_team));
+                if (team == (data[i].home_team || data[i].away_team)){
+                    var h2h = data[i].bookmakers[0].markets[0];
+                    var spreads = data[i].bookmakers[0].markets[1];
+                    var totals = data[i].bookmakers[0].markets[2];
+                    console.log(h2h);
+                    console.log(spreads);
+                    console.log(totals);
+                }
             }
-                
+        }else {
+            console.log('No Games');
         }
-});
+    });
 }
-
-var submitBtn = document.querySelector('#submitbtn')
-submitBtn.addEventListener('click', getOdds);
+var form = document.getElementById('form');
+form.addEventListener('submit', getOdds);
