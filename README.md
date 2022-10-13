@@ -1,5 +1,5 @@
 # Against-the-Odds-
-A sports information webiste
+A sports information website that allows the user to see all the data necessary to watch their favorite sports games
 
 
 ## User Story
@@ -7,12 +7,12 @@ As a user, I can submit a search query from the application to request data and 
 
 As a user, I can select from a dropdown menu the type of sport then the sports organization to then add to a favorites page to store all my favorite teams data on
 
-As a user, I can see all my results on my favorites page of upcoming games, live games, and the associated weather data.
+As a user, I can see all my results on my favorites page of upcoming games, live games, and the associated weather data during gametimes for a specific user input stadium
 
 
 
 ## Description of code -Bell
-I have been tasked with getting the information from the server side third party weather API and all of the logic required to store files in local storage when pulling from the API.
+I have been tasked with getting the information from the server side third party weather API for a specific sports stadium and gametime. Responsibilities also include all of the logic required to store files in local storage when pulling from the API. 
 
 ## Deployed URL
 
@@ -25,7 +25,7 @@ Be deployed to GitHub Pages. --waiting
 
 Be interactive (i.e., accept and respond to user input).
 
-Use at least two server-side APIs.
+Use at least two server-side APIs. --done google and weatherbit
 
 Does not use alerts, confirms, or prompts (use modals).
 
