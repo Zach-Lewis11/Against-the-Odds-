@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Link to Bulma-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@300&family=Puritan&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/style.css">
-        <title>Against the Odds!</title>
-    </head>
-    <!--Beginning of the body-->
-    <body>
-        <!--Navbar-->
-        <nav class="navbar p-6  is-align-content-baseline level">
-            <div class="level-left is-flex-direction-column">
-                <h3 class="title is-1">Against the Odds!</h3>
-                <p class="title is-5">A site for all your favorite teams odds.</p>
-                <!--Added button to go back to search/index.html-->
-            </div>
-            <div class="level-right">
-                <a href="./index.html" class="button m-1">Search Page</a>
-                <a href="./favorites.html" class="button m-1" >Favorites</a>
-            </div>
-        </nav>
-        <!--Card section to display odds API information-->
-        <main  >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link to Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@300&family=Puritan&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Against the Odds!</title>
+</head>
+<!--Beginning of the body-->
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar p-6  is-align-content-baseline level">
+        <div class="level-left is-flex-direction-column">
+            <h3 class="title is-1">Against the Odds!</h3>
+            <p class="title is-5">A site for all your favorite teams odds.</p>
+            <!--Added button to go back to search/index.html-->
+        </div>
+        <div class="level-right">
+            <a href="./index.html" class="button m-1">Search Page</a>
+            <a href="./favorites.html" class="button m-1">Favorites</a>
+        </div>
+    </nav>
+    <!--Card section to display odds API information-->
+    <main>
         <section class="card m-4">
             <div class="card-content">
-              <div id="team-info" class="content">
-                <h4 id="info">Card title</h4>
-                <p>Display Information from Odds API</p>
-              </div>
+                <div id="team-info" class="content">
+                    <h4 id="info">Card title</h4>
+                    <p></p>
+                </div>
             </div>
         </section>
         <!--Card section to display weather API information-->
         <section class="card m-4">
             <div class="card-content">
-              <div id="weather-info" class="content">
-                <h4 id="weather">Weather at a Stadium</h4>
-                <input id="input" class="w-100">
-                <div id='map' style="height:200px; width:300px;"></div>
-                <h5 id="stadiumName"></h5>
-                <h5 id="stadiumAddress"></h5>
-                <h4>Current Weather:</h4>
-                <p id="description"></p>
-                <p id="temp"></p>
-                <p id="precip"></p>
-                <p id="wind"></p>
-                <p id="clouds"></p>
-                <p id="snow"></p>
-                <p id="uv"></p>
-                <p id="rh"></p>
-                <div id="forcastContent">
+                <div id="weather-info" class="content">
+                    <h4 id="weather">Weather at a Stadium</h4>
+                    <input id="input" class="w-100">
+                    <div id='map' style="height:200px; width:300px;"></div>
+                    <h5 id="stadiumName"></h5>
+                    <h5 id="stadiumAddress"></h5>
+                    <h4>Current Weather:</h4>
+                    <p id="description"></p>
+                    <p id="temp"></p>
+                    <p id="precip"></p>
+                    <p id="wind"></p>
+                    <p id="clouds"></p>
+                    <p id="snow"></p>
+                    <p id="uv"></p>
+                    <p id="rh"></p>
+                    <div id="forcastContent">
+                    </div>
+                    <h4 id="weather">Weather</h4>
+                    <p> Information from Weather API </p>
                 </div>
-                <h4 id="weather">Weather</h4>
-                <p> Information from Weather API </p>
-              </div>
             </div>
         </section>
-        </main>
-        <!--Footer in the navbar style-->
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
-            </div>
-            <div class="content has-text-centered">
-                <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
-                <a href="./README.md" class="button m-2 ">README</a>
-            </div>
-        </footer>
+    </main>
+    <!--Footer in the navbar style-->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
+        </div>
+        <div class="content has-text-centered">
+            <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
+            <a href="./README.md" class="button m-2 ">README</a>
+        </div>
+    </footer>
 
-        <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0dna1RtVg-AmAwNh_aOtoRUD8V8Z7txs&libraries=places&callback=initMap">
+    <script async=""
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0dna1RtVg-AmAwNh_aOtoRUD8V8Z7txs&libraries=places&callback=initMap">
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="./assets/js/mapWeather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/mapWeather.js"></script>
+    <script src="./assets/js/kroddsresults.js"></script>
+</body>
 
-
-        
-   <script src="./assets/js/kroddsresults.js"></script>
-    </body>
-    
 </html>
