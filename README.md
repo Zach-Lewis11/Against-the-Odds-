@@ -21,6 +21,7 @@ I was responsible for creating HTML files using a Bootstrap alternative for easi
 
 
 ## Description of code - Zach
+I was responsible for creating and manageing the syle of the website. To do this, I created a custom css and used Bulma to and more stying to html. when new JavaScript was added, I added classses and tags to what was being appended to the page. Something I was also able to do was help with trobleshoot and formulate some of the logic the JavaScript uses.  
 
 ## Deployed URL
 [Against the Odds](https://zach-lewis11.github.io/Against-the-Odds-/index.html)
