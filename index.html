@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Link to Bulma-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito+Sans:wght@300&family=Puritan&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style.css">
+        <title>Against the Odds!</title>
+    </head>
+    <!--Beginning of the body-->
+    <body>
+        <!--Navbar-->
+        <nav class="navbar p-6  is-align-content-baseline level mb-0">
+            <div class="level-left is-flex-direction-column">
+                <h3 class="title is-1">Against the Odds!</h3>
+                <p class="title is-5">A site for all your favorite teams odds.</p>
+            </div>
+            <div class="level-right">
+                <a href="./favorites.html" class="button">Favorites</a>
+            </div>
+        </nav>
+        <!--Hero section with Fullscreen Image and the modal-->
+        <section class="hero is-fullheight">
+            <div class="hero-body is-flex-direction-column ">
+                <div class="button box start-button" id="main-button">Make your Search</div>
+                <!--  MODAL BEGINNING  -->
+                <section class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content box modal-box">
+                        <!--Sports options-->
+                        <div class="field select is-normal m-4">
+                            <select id="league">
+                                <option selected disabled>Select the League:</option>
+                                <option class="MLB">MLB</option>
+                                <option class="NFL">NFL</option>
+                                <option class="NBA">NBA</option>
+                                <option class="MLS">MLS</option>
+                            </select>
+                        </div>
+                        <!--MLB teams options-->
+                        <div class="field-1 select is-normal m-4">
+                            <select id="MLBteams">
+                                <option selected disabled>Select a Team:</option>
+                                <option>Atlanta Braves</option>
+                                <option>Miami Marlins</option>
+                                <option>New York Mets</option>
+                                <option>Philadelphia Phillies</option>
+                                <option>Washington Nationals</option>
+                                <option>Chicago Cubs</option>
+                                <option>Cincinnati Reds</option>
+                                <option>Milwaukee Brewers</option>
+                                <option>Pittsburgh Pirates</option>
+                                <option>St. Louis Cardinals</option>
+                                <option>Arizona Diamondbacks</option>
+                                <option>Colorado Rockies</option>
+                                <option>Los Angeles Dodgers</option>
+                                <option>San Diego Padres</option>
+                                <option>San Francisco Giants</option>
+                                <option>Baltimore Orioles</option>
+                                <option>Boston Red Sox</option>
+                                <option>New York Yankees</option>
+                                <option>Tampa Bay Rays</option>
+                                <option>Toronto Blue Jays</option>
+                                <option>Chicago White Sox</option>
+                                <option>Cleveland Indians</option>
+                                <option>Detroit Tigers</option>
+                                <option>Kansas City Royals</option>
+                                <option>Minnesota Twins</option>
+                                <option>Houston Astros</option>
+                                <option>Los Angeles Angels</option>
+                                <option>Oakland Athletics</option>
+                                <option>Seattle Mariners</option>
+                                <option>Texas Rangers</option>
+                            </select>
+                        </div>
+                        <!--NFL teams options-->
+                        <div class="field-2 select is-normal m-4">
+                            <select id="NFLteams">
+                                <option selected disabled>Select a Team:</option>
+                                <option>Arizona Cardinals</option>
+                                <option>Atlanta Falcons</option>
+                                <option>Baltimore Ravens</option>
+                                <option>Buffalo Bills</option>
+                                <option>Carolina Panthers</option>
+                                <option>Chicago Bears</option>
+                                <option>Cincinnati Bengals</option>
+                                <option>Cleveland Browns</option>
+                                <option>Dallas Cowboys</option>
+                                <option>Denver Broncos</option>
+                                <option>Detroit Lions</option>
+                                <option>Green Bay Packers</option>
+                                <option>Houston Texans</option>
+                                <option>Indianapolis Colts</option>
+                                <option>Jacksonville Jaguars</option>
+                                <option>Kansas City Chiefs</option>
+                                <option>Las Vegas Raiders</option>
+                                <option>Los Angeles Chargers</option>
+                                <option>Los Angeles Rams</option>
+                                <option>Miami Dolphins</option>
+                                <option>Minnesota Vikings</option>
+                                <option>New England Patriots</option>
+                                <option>New Orleans Saints</option>
+                                <option>New York Giants</option>
+                                <option>New York Jets</option>
+                                <option>Philadelphia Eagles</option>
+                                <option>Pittsburgh Steelers</option>
+                                <option>San Francisco 49ers</option>
+                                <option>Seattle Seahawks</option>
+                                <option>Tampa Bay Buccaneers</option>
+                                <option>Tennessee Titans</option>
+                                <option>Washington Commanders</option>
+                            </select>
+                        </div>
+                        <!--NBA teams options-->
+                        <div class="field-3 select is-normal m-4">
+                            <select id="NBAteams">
+                                <option selected disabled>Select a Team:</option>
+                                <option>Atlanta Hawks</option>
+                                <option>Boston Celtics</option>
+                                <option>Brooklyn Nets</option>
+                                <option>Charlotte Hornets</option>
+                                <option>Chicago Bulls</option>
+                                <option>Cleveland Cavaliers</option>
+                                <option>Dallas Mavericks</option>
+                                <option>Denver Nuggets</option>
+                                <option>Detroit Pistons</option>
+                                <option>Golden State Warriors</option>
+                                <option>Houston Rockets</option>
+                                <option>Indiana Pacers</option>
+                                <option>Los Angeles Clippers</option>
+                                <option>Los Angeles Lakers</option>
+                                <option>Memphis Grizzlies</option>
+                                <option>Miami Heat</option>
+                                <option>Milwaukee Bucks</option>
+                                <option>Minnesota Timberwolves</option>
+                                <option>New Orleans Pelicans</option>
+                                <option>New York Knicks</option>
+                                <option>Oklahoma City Thunder</option>
+                                <option>Orlando Magic</option>
+                                <option>Philadelphia 76ers</option>
+                                <option>Phoenix Suns</option>
+                                <option>Portland Trail Blazers</option>
+                                <option>Sacramento Kings</option>
+                                <option>San Antonio Spurs</option>
+                                <option>Toronto Raptors</option>
+                                <option>Utah Jazz</option>
+                                <option>Washington Wizards</option>
+                            </select>
+                        </div>
+                        <!--MLS teams options-->
+                        <div class="field-4 select is-normal mb-4">
+                            <select id="MLSteams">
+                                <option selected disabled>Select a Team:</option>
+                                <option>Atlanta United FC</option>
+                                <option>Chicago Fire FC</option>
+                                <option>Colorado Rapids</option>
+                                <option>Columbus Crew SC</option>
+                                <option>D.C. United</option>
+                                <option>FC Cincinnati</option>
+                                <option>FC Dallas</option>
+                                <option>Houston Dynamo</option>
+                                <option>Inter Miami CF</option>
+                                <option>LA Galaxy</option>
+                                <option>Los Angeles FC</option>
+                                <option>Minnesota United FC</option>
+                                <option>Montreal Impact</option>
+                                <option>Nashville SC</option>
+                                <option>New England Revolution</option>
+                                <option>New York City FC</option>
+                                <option>New York Red Bulls</option>
+                                <option>Orlando City SC</option>
+                                <option>Philadelphia Union</option>
+                                <option>Portland Timbers</option>
+                                <option>Real Salt Lake</option>
+                                <option>San Jose Earthquakes</option>
+                                <option>Seattle Sounders FC</option>
+                                <option>Sporting Kansas City</option>
+                                <option>Toronto FC</option>
+                                <option>Vancouver Whitecaps FC</option>
+                            </select>
+                        </div>
+                        <a href="./results.html" class="button m-4">Submit</a>
+                    </div>
+                </section>
+                <!-- added background image in css not html (ZL) -->
+            </div>
+            <!--Footer-->
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
+                </div>
+                <div class="content has-text-centered">
+                    <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
+                    <a href="./README.md" class="button m-2 ">README</a>
+                </div>
+            </footer>
+        </section>
+        <!--Script for Modal-->
+        <script src="./assets/js/modal.js"></script>
+    </body>
+    
+</html>
