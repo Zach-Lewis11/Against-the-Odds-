@@ -173,7 +173,7 @@ function getGameForcast(lat, lon) {
         .then(function (dat) {
             console.log(dat.data[0]);
 
-            for (var i = 0; i < dat.data.length; i++) {
+            for (var i = 0; i < dat.data.length; i+=12) {
                 // add conditional here if timestamplocal === gameDate && gameTime
 
                 //then pull weather data

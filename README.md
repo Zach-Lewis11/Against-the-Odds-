@@ -12,29 +12,31 @@ As a user, I can see all my results on my favorites page of upcoming games, live
 
 
 ## Description of code -Bell
-I have been tasked with getting the information from the server side third party weather API for a specific sports stadium and gametime. Responsibilities also include all of the logic required to store files in local storage when pulling from the API. 
+I have been tasked with getting the information from the server side third party weather API for a specific sports stadium and gametime. Responsibilities also include all of the logic required to store files in local storage when pulling from the API. I also used google maps and placeID APIs to create a map in the weather card so the user can see where the stadium is located with the associated data. There is an autocomplete input bar that once clicked creates a marker on the stadium and then posts all the data associated with that stadium.
+
+## Description of code - Khonenev
+I was responsible for creating HTML files using a Bootstrap alternative for easier custom styling of the webpage. Our team decided to use Bulma.io. After linking Bulma to each HTML, I began to create a website layout, following a created wireframe. In total, I created three HTML pages, but I made sure they are appropriately referenced, and the title stayed the same, so the user would not feel like one is traveling between different websites. The most difficult part of work for me was activating the modal through writing custom JavaScript, which was required because Bulma.io does not have in-built scripts. My teammates helped me immensely, and together we made modal work the way we needed.
+
+## Description of code - Keshon
+
+
+## Description of code - Zach
 
 ## Deployed URL
+[Against the Odds](https://zach-lewis11.github.io/Against-the-Odds-/results.html)
+
+
 
 ## Screenshots
 
-## Reference class requirements
-Use a CSS framework other than Bootstrap. --Bulma
+### Homepage
+![alt text](homepage.png)
 
-Be deployed to GitHub Pages. --waiting
+### Modal
+![alt text](modal1.png)
 
-Be interactive (i.e., accept and respond to user input).
+![alt text](modal2.png)
 
-Use at least two server-side APIs. --done google and weatherbit
 
-Does not use alerts, confirms, or prompts (use modals).
-
-Use client-side storage to store persistent data.
-
-Be responsive.
-
-Have a polished UI.
-
-Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+### Example Results Page
+![alt text](Results.png)
