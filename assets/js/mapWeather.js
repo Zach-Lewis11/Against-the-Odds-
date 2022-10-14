@@ -94,6 +94,12 @@ function initMap(){
 
 
         getLatLong(location);
+<<<<<<< Updated upstream
+        //print name and address
+        outputStadium.innerHTML = 'Stadium Name: ' + name;
+        outputAddress.innerHTML = 'Stadium Address: ' + location;
+=======
+>>>>>>> Stashed changes
         //print name and address
         outputStadium.innerHTML = 'Stadium Name: ' + name;
         outputAddress.innerHTML = 'Stadium Address: ' + location;
@@ -145,6 +151,18 @@ function getWeather(lat,lon) {
             return response.json();
         })
         .then(function (dat) {
+                    //print data to card
+        outputDesc.innerHTML = 'Weather Description: ' + dat.data[0].weather.description;
+        outputTemp.innerHTML = 'Temperature: ' + dat.data[0].temp + ' degrees F';
+        outputPrecip.innerHTML ='Precipitation: ' + dat.data[0].precip + ' inches of rainfall';
+        outputWind.innerHTML = 'Wind Speed: ' + dat.data[0].wind_spd + 'mph';
+        outputClouds.innerHTML = 'Clouds: ' + dat.data[0].clouds + "%";
+        outputSnow.innerHTML = 'Snowfall: ' + dat.data[0].snow + ' inches of depth';
+        //uv index
+        outputUV.innerHTML ='UV Index: ' + dat.data[0].uv;
+        //relative humidity
+        outputRH.innerHTML ='Relative Humidity: '+ dat.data[0].rh+'%';
+<<<<<<< Updated upstream
         //print data to card
         outputDesc.innerHTML = 'Weather Description: ' + dat.data[0].weather.description;
         outputTemp.innerHTML = 'Temperature: ' + dat.data[0].temp + ' degrees F';
@@ -157,6 +175,20 @@ function getWeather(lat,lon) {
         //relative humidity
         outputRH.innerHTML ='Relative Humidity: '+ dat.data[0].rh+'%';
 
+=======
+            console.log(dat);
+            console.log(dat.data[0].wind_spd);
+            console.log(dat.data[0].precip);
+            console.log(dat.data[0].clouds);
+            console.log(dat.data[0].snow);
+            console.log(dat.data[0].uv);
+            console.log(dat.data[0].temp);
+            //relative humidity
+            console.log(dat.data[0].rh);
+            console.log(dat.data[0].weather.icon);
+            console.log(dat.data[0].weather.description);
+            // call function here to render html to display data
+>>>>>>> Stashed changes
         })
 
 }
@@ -256,6 +288,41 @@ function getGameForcast(lat,lon){
         });
 }
 
+<<<<<<< Updated upstream
+=======
+
+function saveLocation(stadiumName,loc){
+    //initialize or pull json object in local storage
+    var savedStadium = JSON.parse(localStorage.getItem("Stadium")) || [];
+    //boolean value to see if something is present
+    var alreadyExists = false;
+    for(var i=0; i < savedStadium.length;i++){
+        //searches the array for all values of name
+        if(savedStadium[i].name == stadiumName){
+            //if it exists we change the value to true
+            alreadyExists = true;
+        }
+    }
+    if(alreadyExists){
+        console.log('exists');
+    }else{
+        //adding to existing object the location and name
+        savedStadium.push({
+            name: stadiumName,
+            location: loc,
+        })
+        //saves it to storage and converts back to a string for JSON 
+        localStorage.setItem("Stadium",JSON.stringify(savedStadium));
+    }
+
+
+}
+
+
+
+
+// function renderHTML(){
+>>>>>>> Stashed changes
 
 function saveLocation(stadiumName,loc){
     //initialize or pull json object in local storage
