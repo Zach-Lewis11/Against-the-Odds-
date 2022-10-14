@@ -23,7 +23,7 @@ I was responsible for creating HTML files using a Bootstrap alternative for easi
 ## Description of code - Zach
 
 ## Deployed URL
-[Against the Odds](https://zach-lewis11.github.io/Against-the-Odds-/results.html)
+[Against the Odds](https://zach-lewis11.github.io/Against-the-Odds-/index.html)
 
 
 
