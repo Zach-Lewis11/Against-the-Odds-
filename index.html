@@ -23,14 +23,14 @@
         </nav>
         <!--Hero section with Fullscreen Image and the modal-->
         <section class="hero is-fullheight">
-            <div class="hero-body">
-                <div class="button" id="main-button">Make your Search</div>
+            <div class="hero-body is-flex-direction-column ">
+                <div class="button box start-button" id="main-button">Make your Search</div>
                 <!--  MODAL BEGINNING  -->
                 <section class="modal">
                     <div class="modal-background"></div>
-                    <div class="modal-content">
+                    <div class="modal-content box modal-box">
                         <!--Sports options-->
-                        <div class="field">
+                        <div class="field select is-normal m-4">
                             <select id="league">
                                 <option selected disabled>Select the League:</option>
                                 <option class="MLB">MLB</option>
@@ -40,7 +40,7 @@
                             </select>
                         </div>
                         <!--MLB teams options-->
-                        <div class="field-1">
+                        <div class="field-1 select is-normal m-4">
                             <select id="MLBteams">
                                 <option selected disabled>Select a Team:</option>
                                 <option>Atlanta Braves</option>
@@ -76,7 +76,7 @@
                             </select>
                         </div>
                         <!--NFL teams options-->
-                        <div class="field-2">
+                        <div class="field-2 select is-normal m-4">
                             <select id="NFLteams">
                                 <option selected disabled>Select a Team:</option>
                                 <option>Arizona Cardinals</option>
@@ -114,7 +114,7 @@
                             </select>
                         </div>
                         <!--NBA teams options-->
-                        <div class="field-3">
+                        <div class="field-3 select is-normal m-4">
                             <select id="NBAteams">
                                 <option selected disabled>Select a Team:</option>
                                 <option>Atlanta Hawks</option>
@@ -150,7 +150,7 @@
                             </select>
                         </div>
                         <!--MLS teams options-->
-                        <div class="field-4">
+                        <div class="field-4 select is-normal mb-4">
                             <select id="MLSteams">
                                 <option selected disabled>Select a Team:</option>
                                 <option>Atlanta United FC</option>
@@ -181,22 +181,22 @@
                                 <option>Vancouver Whitecaps FC</option>
                             </select>
                         </div>
-                        <a href="./results.html" class="button">Submit</a>
+                        <a href="./results.html" class="button m-4">Submit</a>
                     </div>
                 </section>
                 <!-- added background image in css not html (ZL) -->
             </div>
+            <!--Footer-->
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
+                </div>
+                <div class="content has-text-centered">
+                    <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
+                    <a href="./README.md" class="button m-2 ">README</a>
+                </div>
+            </footer>
         </section>
-        <!--Footer in the navbar style-->
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <h3 id="foot-title" class="title is-3">Contact Us & Info</h3>
-            </div>
-            <div class="content has-text-centered">
-                <a href="https://github.com/Zach-Lewis11/Against-the-Odds-" class="button m-2">GitHub</a>
-                <a href="./README.md" class="button m-2 ">README</a>
-            </div>
-        </footer>
         <!--Script for Modal-->
         <script src="./assets/js/modal.js"></script>
     </body>

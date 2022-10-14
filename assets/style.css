@@ -23,6 +23,16 @@ main {
     background-color: var(--dark);
 
 }
+.start-button{
+    width: 25%;
+    margin-top: 25%;
+    justify-self: end;
+    font-size: 1.5rem;
+}
+.modal-box{
+    background-color: var(--dark);
+}
+
 .footer{
     background-color: var(--dark);
 }
