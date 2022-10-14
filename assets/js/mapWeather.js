@@ -257,6 +257,8 @@ function getGameForcast(lat,lon){
 }
 
 
+// function renderHTML(){
+
 function saveLocation(stadiumName,loc){
     //initialize or pull json object in local storage
     var savedStadium = JSON.parse(localStorage.getItem("Stadium")) || [];
