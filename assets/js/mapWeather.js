@@ -65,6 +65,9 @@ function initMap(){
         console.log(location);
         console.log(name);
         getLatLong(location);
+        
+        //new function to save location
+        saveLocation(name,location);
 
         new google.maps.Marker({
             position: stadium.geometry.location,
@@ -121,7 +124,7 @@ function getWeather(lat,lon) {
             console.log(dat.data[0].weather.icon);
             console.log(dat.data[0].weather.description);
             // call function here to render html to display data
-        });
+        })
 
 }
 
@@ -159,6 +162,37 @@ function getGameForcast(lat,lon){
             // //call function here to render html to display data
         });
 }
+
+
+function saveLocation(stadiumName,loc){
+    //initialize or pull json object in local storage
+    var savedStadium = JSON.parse(localStorage.getItem("Stadium")) || [];
+    //boolean value to see if something is present
+    var alreadyExists = false;
+    for(var i=0; i < savedStadium.length;i++){
+        //searches the array for all values of name
+        if(savedStadium[i].name == stadiumName){
+            //if it exists we change the value to true
+            alreadyExists = true;
+        }
+    }
+    if(alreadyExists){
+        console.log('exists');
+    }else{
+        //adding to existing object the location and name
+        savedStadium.push({
+            name: stadiumName,
+            location: loc,
+        })
+        //saves it to storage and converts back to a string for JSON 
+        localStorage.setItem("Stadium",JSON.stringify(savedStadium));
+    }
+
+
+}
+
+
+
 
 // function renderHTML(){
 
