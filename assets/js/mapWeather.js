@@ -14,6 +14,31 @@
 
 var input = document.querySelector("#input");
 
+var outputStadium = document.getElementById("stadiumName");
+var outputAddress = document.getElementById("stadiumAddress");
+var outputDesc = document.getElementById("description");
+var outputTemp = document.getElementById("temp");
+var outputPrecip = document.getElementById("precip");
+var outputWind = document.getElementById("wind");
+var outputClouds = document.getElementById("clouds");
+var outputSnow = document.getElementById("snow");
+var outputUV = document.getElementById("uv");
+var outputRH = document.getElementById("rh");
+
+var forcastContent = document.getElementById('forcastContent');
+
+
+outputStadium.innerHTML = 'Stadium Name: ';
+outputAddress.innerHTML = 'Stadium Address: ';
+outputDesc.innerHTML = 'Weather Description: ';
+outputTemp.innerHTML = 'Temperature: ';
+outputPrecip.innerHTML = 'Precipitation: ';
+outputWind.innerHTML = 'Wind Speed: ';
+outputClouds.innerHTML = 'Clouds: ';
+outputSnow.innerHTML = 'Snowfall: ';
+outputUV.innerHTML = 'UV Index: ';
+outputRH.innerHTML = 'Relative Humidity: ';
+
 
 function initMap(){
     //austin TX center
@@ -62,9 +87,19 @@ function initMap(){
         var stadium = autocomplete.getPlace();
         var location = stadium.formatted_address;
         var name  = stadium.name;
-        console.log(location);
-        console.log(name);
+
+        //re initialize values
+        forcastContent.innerHTML = '';
+
+
+
         getLatLong(location);
+        //print name and address
+        outputStadium.innerHTML = 'Stadium Name: ' + name;
+        outputAddress.innerHTML = 'Stadium Address: ' + location;
+        
+        //new function to save location
+        saveLocation(name,location);
 
         new google.maps.Marker({
             position: stadium.geometry.location,
@@ -87,6 +122,7 @@ function getLatLong(city) {
         .then(function (response) {
             var latitude = response.data.results[0].geometry.location.lat;
             var longitude = response.data.results[0].geometry.location.lng;
+            //call weather functions from lat long
             getWeather(latitude,longitude);
             getGameForcast(latitude,longitude);
         })
@@ -109,19 +145,19 @@ function getWeather(lat,lon) {
             return response.json();
         })
         .then(function (dat) {
-            console.log(dat);
-            console.log(dat.data[0].wind_spd);
-            console.log(dat.data[0].precip);
-            console.log(dat.data[0].clouds);
-            console.log(dat.data[0].snow);
-            console.log(dat.data[0].uv);
-            console.log(dat.data[0].temp);
-            //relative humidity
-            console.log(dat.data[0].rh);
-            console.log(dat.data[0].weather.icon);
-            console.log(dat.data[0].weather.description);
-            // call function here to render html to display data
-        });
+        //print data to card
+        outputDesc.innerHTML = 'Weather Description: ' + dat.data[0].weather.description;
+        outputTemp.innerHTML = 'Temperature: ' + dat.data[0].temp + ' degrees F';
+        outputPrecip.innerHTML ='Precipitation: ' + dat.data[0].precip + ' inches of rainfall';
+        outputWind.innerHTML = 'Wind Speed: ' + dat.data[0].wind_spd + 'mph';
+        outputClouds.innerHTML = 'Clouds: ' + dat.data[0].clouds + "%";
+        outputSnow.innerHTML = 'Snowfall: ' + dat.data[0].snow + ' inches of depth';
+        //uv index
+        outputUV.innerHTML ='UV Index: ' + dat.data[0].uv;
+        //relative humidity
+        outputRH.innerHTML ='Relative Humidity: '+ dat.data[0].rh+'%';
+
+        })
 
 }
 
@@ -135,76 +171,122 @@ function getGameForcast(lat,lon){
             return response.json();
         })
         .then(function (dat) {
-            //for loop through entire hourly data
-            //if datetime === gameDate && gameTime
+            console.log(dat.data[0]);
+
+            for(var i = 0;i<dat.data.length;i++){
+                // add conditional here if timestamplocal === gameDate && gameTime
+
                 //then pull weather data
+                var forcastTimestamp = dat.data[i].timestamp_local;
+                var forcastDescription = dat.data[i].weather.description;
+                var forcastTemp = dat.data[i].temp;
+                var forcastPrecip = dat.data[i].precip;
+                var forcastWindSpeed = dat.data[i].wind_spd;
+                var forcastClouds = dat.data[i].clouds;
+                var forcastSnow = dat.data[i].snow;
+                var forcastUV = dat.data[i].uv;
+                //relative humidity
+                var forcastRH = dat.data[i].rh;
+
+                //create elements
+                var header = document.createElement('h3');
+                var pTime = document.createElement('h4');
+                var pDes = document.createElement('p');
+                var pTemp = document.createElement('p');
+                var pPrecip = document.createElement('p');
+                var pWind = document.createElement('p');
+                var pClouds = document.createElement('p');
+                var pSnow = document.createElement('p');
+                var pUV = document.createElement('p');
+                var pRH = document.createElement('p');
+
+
+
                 //print weather data to card
+                header.innerHTML = "Forcast Weather: ";
+                pTime.innerHTML = 'Local Date and Time: ' + forcastTimestamp;
+                pDes.innerHTML = 'Weather Description: ' + forcastDescription;
+                pTemp.innerHTML = 'Temperature: ' + forcastTemp + ' degrees F';
+                pPrecip.innerHTML = 'Precipitation: ' + forcastPrecip + ' inches of rainfall';
+                pWind.innerHTML = 'Wind Speed: ' + forcastWindSpeed+ 'mph';
+                pClouds.innerHTML = 'Clouds: ' + forcastClouds + "%";
+                pSnow.innerHTML = 'Snowfall: ' + forcastSnow + ' inches of depth';
+                pUV.innerHTML = 'UV Index: ' + forcastUV;
+                pRH.innerHTML = 'Relative Humidity: '+ forcastRH+'%';
+
+                //append elements
+                forcastContent.appendChild(header);
+                forcastContent.appendChild(pTime);
+                forcastContent.appendChild(pDes);
+                forcastContent.appendChild(pTemp);
+                forcastContent.appendChild(pPrecip);
+                forcastContent.appendChild(pWind);
+                forcastContent.appendChild(pClouds);
+                forcastContent.appendChild(pSnow);
+                forcastContent.appendChild(pUV);
+                forcastContent.appendChild(pRH);
+
+
                 //create an object from data
-            //print object to local storage if user denotes as a favorite
+
+
+            }
 
 
 
-            // console.log(dat);
-            // console.log(dat.data[0].datetime);
-            // console.log(dat.data[0].wind_spd);
-            // console.log(dat.data[0].precip);
-            // console.log(dat.data[0].clouds);
-            // console.log(dat.data[0].snow);
-            // console.log(dat.data[0].uv);
-            // console.log(dat.data[0].temp);
-            // //relative humidity
-            // console.log(dat.data[0].rh);
-            // console.log(dat.data[0].weather.icon);
-            // console.log(dat.data[0].weather.description);
-            // //call function here to render html to display data
+
+
+// -----------------------------------------
+
+//                 var obj = {};
+
+//                     obj.Day = forcastDate;
+//                     obj.Temp = forcastTemp;
+//                     obj.Wind = forcastWind;
+//                     obj.Humidity = forcastHumid;
+
+//                     //push data to the array
+//                     arr.push(obj);
+//                 }
+//                 console.log(arr);
+//             }
+// ----------------------------------
+
+
         });
 }
 
-// function renderHTML(){
 
-// }
+function saveLocation(stadiumName,loc){
+    //initialize or pull json object in local storage
+    var savedStadium = JSON.parse(localStorage.getItem("Stadium")) || [];
+    //boolean value to see if something is present
+    var alreadyExists = false;
+    for(var i=0; i < savedStadium.length;i++){
+        //searches the array for all values of name
+        if(savedStadium[i].name == stadiumName){
+            //if it exists we change the value to true
+            alreadyExists = true;
+        }
+    }
+    if(alreadyExists){
+        console.log('exists');
+    }else{
+        //adding to existing object the location and name
+        savedStadium.push({
+            name: stadiumName,
+            location: loc,
+        })
+        //saves it to storage and converts back to a string for JSON 
+        localStorage.setItem("Stadium",JSON.stringify(savedStadium));
+    }
 
 
-// function renderForcast(data) {
-//     var counter = 1;
-//     var obj = {};
+}
 
 
-//     //loop to pull data in 24 hour increments, data is in 3s so index is at 8
-//     for (var i = 0; i < data.list.length; i += 8) {
-//         //add header to the forcast section
-//         fiveDay.textContent = "5 Day Forecast: ";
-//         //assigned variables for data required
-//         var forcastDate = data.list[i].dt_txt
-//         var forcastTemp = data.list[i].main.temp;
-//         var forcastWind = data.list[i].wind.speed;
-//         var forcastHumid = data.list[i].main.humidity;
-//         //created a string from the counter to push data to each element sequentially
-//         var string = counter.toString()
-//         var doc = document.getElementById(string);
-//         //created the necessary elements
-//         var header = document.createElement("h3");
-//         var pOne = document.createElement("p");
-//         var pTwo = document.createElement("p");
-//         var pThree = document.createElement("p");
-//         //print data to page
-//         header.textContent = forcastDate;
-//         pOne.textContent = "Temp: " + forcastTemp + 'F';
-//         pTwo.textContent = "Wind: " + forcastWind + 'mph';
-//         pThree.textContent = "Humidity: " + forcastHumid + "%";
-//         //append the element to the parent doc
-//         doc.appendChild(header);
-//         doc.appendChild(pOne);
-//         doc.appendChild(pTwo);
-//         doc.appendChild(pThree);
-//         //add data to the object
-//         obj.Day = forcastDate;
-//         obj.Temp = forcastTemp;
-//         obj.Wind = forcastWind;
-//         obj.Humidity = forcastHumid;
-//         counter++;
-//         //push data to the array
-//         arr.push(obj);
-//     }
-//     console.log(arr);
-// }
+
+
+
+
+

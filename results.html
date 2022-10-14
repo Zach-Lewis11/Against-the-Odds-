@@ -37,6 +37,22 @@
         <section class="card m-4">
             <div class="card-content">
               <div id="weather-info" class="content">
+                <h4 id="weather">Weather at a Stadium</h4>
+                <input id="input" class="w-100">
+                <div id='map' style="height:200px; width:300px;"></div>
+                <h5 id="stadiumName"></h5>
+                <h5 id="stadiumAddress"></h5>
+                <h4>Current Weather:</h4>
+                <p id="description"></p>
+                <p id="temp"></p>
+                <p id="precip"></p>
+                <p id="wind"></p>
+                <p id="clouds"></p>
+                <p id="snow"></p>
+                <p id="uv"></p>
+                <p id="rh"></p>
+                <div id="forcastContent">
+                </div>
                 <h4 id="weather">Weather</h4>
                 <p> Information from Weather API </p>
               </div>
@@ -53,6 +69,13 @@
                 <a href="./README.md" class="button m-2 ">README</a>
             </div>
         </footer>
+        <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0dna1RtVg-AmAwNh_aOtoRUD8V8Z7txs&libraries=places&callback=initMap">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./assets/js/mapWeather.js"></script>
+
+
         
    <script src="./assets/js/kroddsresults.js"></script>
     </body>
