@@ -173,7 +173,7 @@ function getGameForcast(lat, lon) {
         .then(function (dat) {
             console.log(dat.data[0]);
 
-            for (var i = 0; i < dat.data.length; i++) {
+            for (var i = 0; i < dat.data.length; i +=24) {
                 // add conditional here if timestamplocal === gameDate && gameTime
 
                 //then pull weather data
@@ -331,16 +331,16 @@ function getResults() {
                 oddsData.appendChild(time);
 
                 var geth2h = Object.keys(h2h.outcomes[0]);
-                mLine.innerHTML = h2h.key + ': ' + h2h.outcomes[0].name + '-' + geth2h[1] + h2h.outcomes[0].price +
+                mLine.innerHTML ='<b>' + h2h.key.toUpperCase() + '</b> ' + ': <br>' + h2h.outcomes[0].name + '-' + geth2h[1] + h2h.outcomes[0].price +
                     '<br>' + h2h.outcomes[1].name + geth2h[1] + '-' + h2h.outcomes[1].price + '</br>';
                 oddsData.appendChild(mLine);
 
                 var getPoints = Object.keys(spreads.outcomes[0]);
-                points.innerHTML = spreads.key + ': ' + '<br>' + spreads.outcomes[0].name + '<br>' + getPoints[2] + spreads.outcomes[0].point + '<br>' + spreads.outcomes[1].name + getPoints[2] + '-' + spreads.outcomes[1].point + '</br>';
+                points.innerHTML ='<b>' + spreads.key.charAt(0).toUpperCase() + spreads.key.slice(1) + '</b>' + ': ' + '<br>' + spreads.outcomes[0].name + ': ' + getPoints[2] + ': ' + spreads.outcomes[0].point + '<br>' + spreads.outcomes[1].name + ': ' + getPoints[2] + ': '+ spreads.outcomes[1].point + '</br>';
                 oddsData.appendChild(points);
 
                 var getTotals = Object.keys(totals.outcomes[0]);
-                overUnder.innerHTML = totals.key + ': ' + totals.outcomes[0].name + '<br>' + getTotals[2] + totals.outcomes[0].point + getTotals[1] + totals.outcomes[1].price + '</br>';
+                overUnder.innerHTML ='<b>' + totals.key.charAt(0).toUpperCase() + totals.key.slice(1) + '</b>' + ': ' + totals.outcomes[0].name + '<br>' + getTotals[2] + ': ' + totals.outcomes[0].point + '<br>'+ getTotals[1] + ': '+ totals.outcomes[1].price + '</br>';
 
                 oddsData.appendChild(overUnder);  
 
