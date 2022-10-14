@@ -18,7 +18,7 @@ I have been tasked with getting the information from the server side third party
 I was responsible for creating HTML files using a Bootstrap alternative for easier custom styling of the webpage. Our team decided to use Bulma.io. After linking Bulma to each HTML, I began to create a website layout, following a created wireframe. In total, I created three HTML pages, but I made sure they are appropriately referenced, and the title stayed the same, so the user would not feel like one is traveling between different websites. The most difficult part of work for me was activating the modal through writing custom JavaScript, which was required because Bulma.io does not have in-built scripts. My teammates helped me immensely, and together we made modal work the way we needed.
 
 ## Description of code - Keshon
-
+My role was to use Live Sports Odds to gather all data user input from team and league and display the game, time, and different types  of odds. I gathered the teams, the different types of odds, and the game time. The most difficult part was all the information the api had. At first we were planning using all the data in the api but that ended up being too difficult for me to implement. My team helped me a lot with the issues in my logic.
 
 ## Description of code - Zach
 I was responsible for creating and manageing the syle of the website. To do this, I created a custom css and used Bulma to and more stying to html. when new JavaScript was added, I added classses and tags to what was being appended to the page. Something I was also able to do was help with trobleshoot and formulate some of the logic the JavaScript uses.  
