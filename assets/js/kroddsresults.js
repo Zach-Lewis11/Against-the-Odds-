@@ -9,7 +9,7 @@ var points = document.createElement('p')
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'fd9ae227a5msh7fab780ac9390e9p1b0513jsn65de5f23bffa',
+        'X-RapidAPI-Key': ,
         'X-RapidAPI-Host': 'odds.p.rapidapi.com',
     credentials: 'include'
     }
