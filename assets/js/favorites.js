@@ -2,8 +2,8 @@
 -Pull data from server side API
 -use client sisde storage to store persistent data
 
-- weatherbit API key: f397daf28bd64b7e971d4ea10464a542
--googlemaps API key: AIzaSyC0dna1RtVg-AmAwNh_aOtoRUD8V8Z7txs
+- weatherbit API key: 
+-googlemaps API key: 
 */
 
 //variables for important DOM elements
