@@ -106,7 +106,7 @@ function getLatLong(city) {
 //get the weather from the latitude and longitude from the google api 
 function getWeather(lat,lon) {
 
-    fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=f397daf28bd64b7e971d4ea10464a542&include=minutely&units=I`, {
+    fetch(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=&include=minutely&units=I`, {
         // The browser fetches the resource from the remote server without first looking in the cache.
         // The browser will then update the cache with the downloaded resource.
         cache: 'reload',
@@ -132,7 +132,7 @@ function getWeather(lat,lon) {
 }
 
 function getGameForcast(lat,lon){
-    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?lat=${lat}&lon=${lon}&key=f397daf28bd64b7e971d4ea10464a542&units=I&hours=240`, {
+    fetch(`https://api.weatherbit.io/v2.0/forecast/hourly?lat=${lat}&lon=${lon}&key=&units=I&hours=240`, {
         // The browser fetches the resource from the remote server without first looking in the cache.
         // The browser will then update the cache with the downloaded resource.
         cache: 'reload',
